@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000';
+axios.defaults.baseURL = process.env.REACT_APP_BACKENDIP|| 'http://localhost:8000';
 axios.defaults.headers.common['Authorization'] =
 	localStorage.getItem('googleToken'); //Initially Null, After first login it will be filled in local storage
 
@@ -30,7 +30,7 @@ const getUser = async () => {
 const patchUser = async (personalObj) => {
 	try {
 		const response = await axios.patch(
-			'http://localhost:8000/user',
+			'/user',
 			personalObj
 		);
 		return response.data;
