@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = process.env.REACT_APP_BACKENDIP|| 'http://localhost:8000';
+axios.defaults.baseURL =
+	process.env.REACT_APP_BACKENDIP || 'http://localhost:8000';
 axios.defaults.headers.common['Authorization'] =
 	localStorage.getItem('googleToken'); //Initially Null, After first login it will be filled in local storage
 
@@ -29,13 +30,51 @@ const getUser = async () => {
 
 const patchUser = async (personalObj) => {
 	try {
-		const response = await axios.patch(
-			'/user',
-			personalObj
-		);
+		const response = await axios.patch('/user', personalObj);
 		return response.data;
 	} catch (err) {
 		console.log(err.response);
 	}
 };
-export { postLogin, getUser, patchUser };
+const getVideos = async () => {
+	try {
+		const response = await axios.get('/video');
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
+
+const createVideo = async (personalObj) => {
+	try {
+		const response = await axios.post('/video', personalObj);
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
+const heartVideos = async (personalObj) => {
+	try {
+		const response = await axios.post('/video/heart', personalObj);
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
+const shopVideos = async (personalObj) => {
+	try {
+		const response = await axios.post('/video/shop', personalObj);
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
+export {
+	postLogin,
+	getUser,
+	patchUser,
+	getVideos,
+	createVideo,
+	heartVideos,
+	shopVideos,
+};

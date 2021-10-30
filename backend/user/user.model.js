@@ -6,6 +6,15 @@ const userSchema = new mongoose.Schema(
 		given_name: String,
 		family_name: String,
 		picture: String,
+		age: Number,
+		gender: String,
+		channelName: {
+			type: String,
+		},
+		displayName: {
+			type: String,
+			trim: true,
+		},
 		gid: {
 			type: String,
 			required: true,
@@ -16,7 +25,18 @@ const userSchema = new mongoose.Schema(
 			type: Boolean,
 			required: true,
 		},
-		phone: String,
+		heartedVideos: [
+			{
+				type: mongoose.SchemaTypes.ObjectId,
+				ref: 'video',
+			},
+		],
+		shopedVideos: [
+			{
+				type: mongoose.SchemaTypes.ObjectId,
+				ref: 'video',
+			},
+		],
 	},
 	{ timestamps: true }
 );

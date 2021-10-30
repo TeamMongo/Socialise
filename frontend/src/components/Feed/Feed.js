@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../App.js';
 import { useHistory } from 'react-router';
+import { getVideos } from '../../API/utils.js';
 /**
  * Features :
  * Show users their video Feed on basis of following and random
@@ -12,18 +13,21 @@ import { useHistory } from 'react-router';
 const Feed = () => {
 	const Auth = useContext(AuthContext);
 	let history = useHistory();
+	const [videos, setVideos] = useState([]);
 	useEffect(() => {
 		if (Auth.user.newuser) {
 			history.push('/user');
 		}
+		let temp = [];
+		let res = getVideos();
+		for (let i = 0; i < res.length; i++) {
+			temp.push(res[i]);
+		}
+		setVideos((v) => [...temp]);
 		//If someone comes to this route before '/' Auth.user will be blank So we can getUser() from API/utils.js
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	return (
-		<div>
-			<h1>Feed Page</h1>
-		</div>
-	);
+	return <div>{videos}</div>;
 };
 
 export default Feed;
