@@ -21,6 +21,8 @@ const userSchema = new mongoose.Schema(
 			unique: true,
 			immutable: true,
 		},
+		totalHeartsReceived: Number,
+		shopIconClicks: Number,
 		newuser: {
 			type: Boolean,
 			required: true,
@@ -40,5 +42,7 @@ const userSchema = new mongoose.Schema(
 	},
 	{ timestamps: true }
 );
-
+userSchema.virtual('userID').get(function () {
+	return this._id;
+});
 module.exports.User = mongoose.model('user', userSchema);
