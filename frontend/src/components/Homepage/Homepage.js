@@ -3,6 +3,7 @@ import { withRouter, useHistory } from 'react-router-dom';
 import { postLogin, getUser } from '../../API/utils.js';
 import { GoogleLogin } from 'react-google-login';
 import { AuthContext } from '../../App.js';
+import './Homepage.scss';
 /**
  * Features :
  * Allow User to Login
@@ -32,15 +33,17 @@ const Homepage = (props) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
-		<div>
-			<h1>Homepage</h1>
-			<GoogleLogin
-				clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-				buttonText="Login"
-				onSuccess={loginUser}
-				onFailure={console.log}
-				cookiePolicy={'single_host_origin'}
-			/>
+		<div className="Homepage">
+			<div className="container">
+				<h1>SOCIALISE</h1>
+				<GoogleLogin
+					clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+					buttonText="Login"
+					onSuccess={loginUser}
+					onFailure={console.log}
+					cookiePolicy={'single_host_origin'}
+				/>
+			</div>
 		</div>
 	);
 };

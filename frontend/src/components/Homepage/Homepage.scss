@@ -1,0 +1,25 @@
+@import '../../index.scss';
+
+.Homepage {
+	width: 100%;
+	height: 100vh;
+	background-color: $primary-back;
+	color: $text-color;
+	margin: 0;
+	padding: 20px 0;
+
+	> .container {
+		max-width: 480px;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		padding-bottom: 2rem;
+		min-height: 300px;
+		color: $primary-color;
+		background-color: #fff;
+		border-radius: 0.25rem;
+		flex-direction: column;
+		display: flex;
+		overflow: scroll;
+	}
+}
