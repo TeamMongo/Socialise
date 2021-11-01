@@ -77,6 +77,22 @@ const shopVideos = (personalObj) => {
 		}
 	});
 };
+const getUserVideos = async () => {
+	try {
+		const response = await axios.get('/user/video');
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
+const postProgressPower = async () => {
+	try {
+		const response = await axios.post('/user/reward');
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+	}
+};
 export {
 	postLogin,
 	getUser,
@@ -85,4 +101,6 @@ export {
 	createVideo,
 	heartVideos,
 	shopVideos,
+	getUserVideos,
+	postProgressPower,
 };

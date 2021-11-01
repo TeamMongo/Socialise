@@ -9,6 +9,7 @@ const NewVideoForm = () => {
 		title: '',
 		videoLink: '',
 		productLink: '',
+		orderID: '',
 	});
 	useEffect(() => {
 		if (Auth.user.newuser) {
@@ -18,8 +19,7 @@ const NewVideoForm = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	const uploadVideo = (formdata) => {
-		// To discuss The orderId Field
-		createVideo({ ...formdata, orderID: '123' });
+		createVideo({ ...formdata });
 
 		//To change if a new error shower is made
 		history.push('/feed');
@@ -74,7 +74,18 @@ const NewVideoForm = () => {
 							required
 						/>
 					</div>
-
+					<div>
+						<div>
+							<label htmlFor="Order ID">OrderID</label>
+						</div>
+						<input
+							type="text"
+							name="orderID"
+							value={formdata.orderID}
+							onChange={handleChange}
+							required
+						/>
+					</div>
 					<div className="termcondn">
 						* I agree To the Terms and Conditions.
 					</div>

@@ -8,6 +8,14 @@ const userSchema = new mongoose.Schema(
 		picture: String,
 		age: Number,
 		gender: String,
+		progressPower: {
+			type: Number,
+			default: 1,
+		},
+		points: {
+			type: Number,
+			default: 0,
+		},
 		channelName: {
 			type: String,
 		},
@@ -21,8 +29,14 @@ const userSchema = new mongoose.Schema(
 			unique: true,
 			immutable: true,
 		},
-		totalHeartsReceived: Number,
-		shopIconClicks: Number,
+		totalHeartsReceived: {
+			type: Number,
+			default: 0,
+		},
+		shopIconClicks: {
+			type: Number,
+			default: 0,
+		},
 		newuser: {
 			type: Boolean,
 			required: true,

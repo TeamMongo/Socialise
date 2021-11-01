@@ -5,11 +5,10 @@ import { getVideos } from '../../API/utils.js';
 import Video from './Video';
 /**
  * Features :
- * Show users their video Feed on basis of following and random
+ * Show users their video random Feed
  * Allow user to heart and unheart a video
  * Allow user to go to shop link from shop button
  * Allow user to scroll videos and snap to fit
- * Show follow button for unfollowed creators
  */
 const Feed = () => {
 	const Auth = useContext(AuthContext);

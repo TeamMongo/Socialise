@@ -18,7 +18,7 @@ const UserNav = () => {
 			></GoogleLogout>
 			<span>{'    '}Logged In Navbar</span>
 			<span>
-				{'    '}Hi {Auth.user.given_name}
+				{'    '}Hi {Auth.user.displayName}
 			</span>
 			<span>
 				{'    '}

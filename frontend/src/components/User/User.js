@@ -2,31 +2,28 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../App.js';
 import NewUserForm from './NewUserForm.js';
 import Dashboard from './Dashboard.js';
-import { getUser } from '../../API/utils';
-/**
- * Features :
- * Allow New User to Post PersonalInfoObj from NewUserForm
- * Allow User to Upload new video from Dashboard
- * Show Other Users for following
- * Allow Users to follow others
- * Show User who they are following. Discuss ??
- * Allow User to Unfollow Others
- * (Optional) Show User Their Uploaded Video List
- * (Optional) Show User Their Followers
- * (Optional) Show Users total Hearts Received
- * (Optional) Show Users total Clicks on Shop icon from their video
- */
+import { getUser, getUserVideos } from '../../API/utils';
+
 const UserProfile = (props) => {
 	const Auth = useContext(AuthContext);
 	const [loading, setLoading] = useState(false);
+	const [myVideos, setMyVideos] = useState([]);
 	const refreshUser = async () => {
-		setLoading(true);
 		const data = await getUser();
 		Auth.setUser(data.user);
+	};
+	const getMyVideos = async () => {
+		const data = await getUserVideos();
+		setMyVideos([...data]);
+	};
+	const setUpDashboard = async () => {
+		setLoading(true);
+		await refreshUser();
+		await getMyVideos();
 		setLoading(false);
 	};
 	useEffect(() => {
-		refreshUser();
+		setUpDashboard();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	return (
@@ -36,7 +33,7 @@ const UserProfile = (props) => {
 			) : Auth.user.newuser ? (
 				<NewUserForm />
 			) : (
-				<Dashboard />
+				<Dashboard user={Auth.user} videos={myVideos} />
 			)}
 		</>
 	);

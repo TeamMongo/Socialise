@@ -4,11 +4,7 @@ import { postLogin, getUser } from '../../API/utils.js';
 import { GoogleLogin } from 'react-google-login';
 import { AuthContext } from '../../App.js';
 import './Homepage.scss';
-/**
- * Features :
- * Allow User to Login
- * Give User Info about app
- */
+//Disable login button if LoggedIn True
 const Homepage = (props) => {
 	let history = useHistory();
 	const Auth = useContext(AuthContext);

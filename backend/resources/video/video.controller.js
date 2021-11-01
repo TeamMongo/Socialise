@@ -1,9 +1,13 @@
 const { User } = require('../../user/user.model');
 const { Video } = require('./video.model');
-
+const { updateRewards, calculateProgressPower } = require('../../utils/reward');
 exports.getAll = async (req, res) => {
 	try {
-		const videos = await Video.find({}).lean().exec();
+		// find non-user's videos and sort them as most recent to old
+		const videos = await Video.find({ userID: { $ne: req.user._id } })
+			.sort({ createdAt: 'desc' })
+			.lean()
+			.exec();
 		return res.status(200).json(videos);
 	} catch (e) {
 		console.log(e.message);
@@ -18,6 +22,26 @@ exports.createOne = async (req, res) => {
 			channelName: req.user.channelName,
 			hearts: 0,
 		});
+		//Updating User Rewards after new video uploaded
+		const creator = await User.findOneAndUpdate(
+			{
+				_id: req.user._id,
+			},
+			{
+				points: updateRewards(
+					req.user.points,
+					req.user.totalHeartsReceived,
+					req.user.shopIconClicks
+				),
+				progressPower: calculateProgressPower(
+					req.user.totalHeartsReceived,
+					req.user.shopIconClicks
+				),
+			},
+			{
+				new: true,
+			}
+		).exec();
 		return res.status(200).json(video);
 	} catch (e) {
 		console.log(e.message);
@@ -30,7 +54,7 @@ exports.heartOne = async (req, res) => {
 	const userID = req.body.creatoruserID;
 
 	if (!videoID || !userID) {
-		res.status(400).json({ messgae: 'No videoID or creatoruserID found' });
+		res.status(400).json({ message: 'No videoID or creatoruserID found' });
 	}
 	try {
 		// const user = User.findById(req.user._id).exec();
@@ -78,7 +102,7 @@ exports.shopOne = async (req, res) => {
 	const userID = req.body.creatoruserID;
 
 	if (!videoID || !userID) {
-		res.status(400).json({ messgae: 'No videoID or creatoruserID found' });
+		res.status(400).json({ message: 'No videoID or creatoruserID found' });
 	}
 	try {
 		const user = User.findById(req.user._id).exec();
