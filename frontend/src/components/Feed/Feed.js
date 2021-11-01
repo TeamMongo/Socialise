@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../App.js';
 import { useHistory } from 'react-router';
 import { getVideos } from '../../API/utils.js';
+import Video from './Video';
 /**
  * Features :
  * Show users their video Feed on basis of following and random
@@ -14,20 +15,53 @@ const Feed = () => {
 	const Auth = useContext(AuthContext);
 	let history = useHistory();
 	const [videos, setVideos] = useState([]);
+
+	const fetchvideos = () => {
+		let temp = [];
+		getVideos().then((res) => {
+			for (let i = 0; i < res.length; i++) {
+				temp.push({ ...res[i], videoID: res[i]._id });
+			}
+			setVideos((v) => [...temp]);
+		});
+	};
 	useEffect(() => {
 		if (Auth.user.newuser) {
 			history.push('/user');
 		}
-		let temp = [];
-		let res = getVideos();
-		for (let i = 0; i < res.length; i++) {
-			temp.push(res[i]);
-		}
-		setVideos((v) => [...temp]);
+		fetchvideos();
 		//If someone comes to this route before '/' Auth.user will be blank So we can getUser() from API/utils.js
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	return <div>{videos}</div>;
+	console.log(videos);
+	return (
+		<div>
+			{videos.map(
+				({
+					title,
+					videoID,
+					videoLink,
+					productLink,
+					orderID,
+					userID,
+					channelName,
+					hearts,
+				}) => (
+					<Video
+						key={videoID}
+						title={title}
+						videoID={videoID}
+						videoLink={videoLink}
+						productLink={productLink}
+						orderID={orderID}
+						userID={userID}
+						channelName={channelName}
+						hearts={hearts}
+					/>
+				)
+			)}
+		</div>
+	);
 };
 
 export default Feed;
