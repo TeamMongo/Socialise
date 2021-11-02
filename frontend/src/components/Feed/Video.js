@@ -25,13 +25,22 @@ export default function Video({
 	};
 	return (
 		<div className="video">
-			<video
+			<iframe
+				title={title}
+				className="video__player"
+				width="560"
+				height="315"
+				src={videoLink}
+				frameborder="0"
+				allowfullscreen
+			/>
+			{/* <video
 				className="video__player"
 				loop
 				onClick={onVideoPress}
 				ref={videoRef}
 				src={videoLink}
-			></video>
+			/> */}
 			<VideoFooter channel={channelName} title={title} />
 			<VideoSidebar
 				hearts={hearts}
