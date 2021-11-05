@@ -78,3 +78,9 @@
 	// hidden using css. Better to delete if not needed
 	display: none;
 }
+
+@media (max-width: 480px) {
+	.Homepage {
+		padding: 0px;
+	}
+}
