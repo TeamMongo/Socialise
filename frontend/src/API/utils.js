@@ -53,29 +53,23 @@ const createVideo = async (personalObj) => {
 		console.log(err.response);
 	}
 };
-const heartVideos = (personalObj) => {
-	return new Promise((resolve, reject) => {
-		try {
-			axios.post('/video/heart', personalObj).then((response) => {
-				resolve(response.data);
-			});
-		} catch (err) {
-			console.log(err.response);
-			reject();
-		}
-	});
+const heartVideos = async (personalObj) => {
+	try {
+		const response = await axios.post('/video/heart', personalObj);
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+		return { hearted: false };
+	}
 };
-const shopVideos = (personalObj) => {
-	return new Promise((resolve, reject) => {
-		try {
-			axios.post('/video/shop', personalObj).then((response) => {
-				resolve(response.data);
-			});
-		} catch (err) {
-			console.log(err.response);
-			reject();
-		}
-	});
+const shopVideos = async (personalObj) => {
+	try {
+		const response = await axios.post('/video/shop', personalObj);
+		return response.data;
+	} catch (err) {
+		console.log(err.response);
+		return {};
+	}
 };
 const getUserVideos = async () => {
 	try {
