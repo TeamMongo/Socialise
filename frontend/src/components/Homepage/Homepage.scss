@@ -15,11 +15,66 @@
 		margin: 0 auto;
 		padding-bottom: 2rem;
 		min-height: 300px;
-		color: $primary-color;
 		background-color: #fff;
 		border-radius: 0.25rem;
 		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
 		display: flex;
 		overflow: scroll;
+
+		> .Brand {
+			margin-top: 180px;
+
+			> .Brand-Logo {
+				height: 120px;
+				width: 120px;
+
+				> img {
+					height: 100%;
+					width: 100%;
+					margin: 0;
+					padding: 0;
+				}
+			}
+
+			> .socialise {
+				@include text-xl;
+				text-align: center;
+			}
+		}
+
+		> .Login {
+			width: 60%;
+			text-align: center;
+
+			> .line1 {
+				@include text-lg;
+			}
+
+			> button {
+				margin: 20px auto;
+				padding: 0px 30px;
+				background-color: #fff;
+				display: flex;
+				align-items: center;
+				font-family: 'Raleway', sans-serif;
+				font-size: large;
+				color: $text-color;
+				border: 0;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+					0 0px 8px 0 rgba(0, 0, 0, 0.2);
+
+				> img {
+					height: 24px;
+					margin: 10px;
+				}
+			}
+		}
 	}
+}
+
+.LoggedOut-Navbar {
+	// hidden using css. Better to delete if not needed
+	display: none;
 }
