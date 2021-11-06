@@ -28,7 +28,7 @@
 			flex-direction: column;
 			margin-top: auto;
 			margin-bottom: auto;
-			border: 2px solid red;
+			// border: 2px solid red;
 			justify-content: center;
 			background-color: black;
 
@@ -77,4 +77,10 @@
 .Feedpage {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+@media (max-width: 480px) {
+	.Feedpage {
+		padding: 0px;
+	}
 }

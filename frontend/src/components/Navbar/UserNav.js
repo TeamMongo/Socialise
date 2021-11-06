@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../App.js';
-import { FaUser, FaPlus, FaTrophy, FaCompass } from 'react-icons/fa';
+import { FaUser, FaPlusCircle, FaTrophy, FaCompass } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 
 const UserNav = () => {
@@ -37,7 +37,7 @@ const UserNav = () => {
 						<IconContext.Provider value={{ className: 'NavIcons' }}>
 							<FaCompass />
 						</IconContext.Provider>
-						<span classname="NavLink">Explore</span>
+						<span className="NavLink">Explore</span>
 					</span>
 				</NavLink>
 
@@ -45,9 +45,9 @@ const UserNav = () => {
 					<span className="NavItem">
 						{'    '}
 						<IconContext.Provider value={{ className: 'NavIcons' }}>
-							<FaPlus />
+							<FaPlusCircle />
 						</IconContext.Provider>
-						<span classname="NavLink">New</span>
+						<span className="NavLink">New</span>
 					</span>
 				</NavLink>
 
@@ -57,7 +57,7 @@ const UserNav = () => {
 						<IconContext.Provider value={{ className: 'NavIcons' }}>
 							<FaUser />
 						</IconContext.Provider>
-						<span classname="NavLink">Profile</span>
+						<span className="NavLink">Profile</span>
 					</span>
 				</NavLink>
 
@@ -67,7 +67,7 @@ const UserNav = () => {
 						<IconContext.Provider value={{ className: 'NavIcons' }}>
 							<FaTrophy />
 						</IconContext.Provider>
-						<span classname="NavLink">Reward</span>
+						<span className="NavLink">Reward</span>
 					</span>
 				</NavLink>
 			</div>
