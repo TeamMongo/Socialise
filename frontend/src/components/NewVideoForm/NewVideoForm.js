@@ -33,8 +33,6 @@ const NewVideoForm = () => {
 	};
 	return (
 		<div>
-			<h1>Please Create a new video</h1>
-			<button onClick={uploadVideo}>Upload</button>
 			<div className="formpage">
 				<form onSubmit={handelSubmit} className="container">
 					<span>Create A new Video..</span>
@@ -85,9 +83,6 @@ const NewVideoForm = () => {
 							onChange={handleChange}
 							required
 						/>
-					</div>
-					<div className="termcondn">
-						* I agree To the Terms and Conditions.
 					</div>
 					<button className="submitbtn"> Upload</button>
 				</form>

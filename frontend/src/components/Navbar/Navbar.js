@@ -4,6 +4,8 @@ import { AuthContext } from '../../App.js';
 
 import UserNav from './UserNav.js';
 import GenNav from './GenNav.js';
+import './Navbar.scss';
+
 const Navbar = (props) => {
 	const Auth = useContext(AuthContext);
 	const Comp = !Auth.isLoggedIn ? <GenNav /> : <UserNav />;
