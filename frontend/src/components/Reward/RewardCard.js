@@ -1,32 +1,34 @@
 import React from 'react';
-const RewardCard = ({ pointsRequired, description, reached }) => {
+import Gift from '../../assets/birthday-gift.jpg';
+import GiftBW from '../../assets/birthday-gift-bw.jpg';
+
+const RewardCard = ({ pointsRequired, description, brand, reached }) => {
 	return (
-		<div
-			style={{
-				border: '1px solid black',
-				display: 'inline-block',
-				padding: '10px',
-			}}
-		>
-			<p>Points Required : {pointsRequired}</p>
-			<p>Description : {description}</p>
+		<div className="Card">
 			{reached ? (
-				<div
-					style={{
-						height: '10px',
-						width: '100%',
-						backgroundColor: 'green',
-					}}
-				></div>
+				<p class="title" style={{ color: '#FF3F6C' }}>
+					{description}
+				</p>
 			) : (
-				<div
-					style={{
-						height: '10px',
-						width: '100%',
-						backgroundColor: 'red',
-					}}
-				></div>
+				<p class="title">{description}</p>
 			)}
+			<p class="brand">from {brand}</p>
+
+			<div className="Conditional">
+				{reached ? (
+					<p></p>
+				) : (
+					<p>
+						Unlocks at <br />
+						{pointsRequired} Points
+					</p>
+				)}
+				{reached ? (
+					<img src={Gift} alt="Gift" />
+				) : (
+					<img src={GiftBW} alt="Gift BW" />
+				)}
+			</div>
 		</div>
 	);
 };

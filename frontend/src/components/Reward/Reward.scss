@@ -1,0 +1,150 @@
+@import '../../index.scss';
+
+.RewardPage {
+	width: 100%;
+	height: calc(100vh - 80px);
+	background-color: $primary-back;
+	color: $text-color;
+	margin: 0;
+	padding: 10px 0 0 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	> .container {
+		max-width: 480px;
+		width: 100%;
+		margin: 0 auto;
+		min-height: 300px;
+		color: $primary-color;
+		background-color: #fff;
+		border-radius: 0.25rem;
+		flex-direction: column;
+		display: flex;
+		overflow: hidden;
+		color: $text-color;
+
+		> .UserInfo {
+			width: 100%;
+			text-align: center;
+
+			> img {
+				border-radius: 50%;
+				margin-top: 40px;
+				// width: 100px;
+			}
+
+			> p {
+				font-weight: bold;
+				margin-top: 8px;
+				@include text-xl;
+			}
+
+			> h3 {
+				color: black;
+				margin-top: 20px;
+				@include text-2xl;
+			}
+		}
+
+		> .Progress {
+			margin-top: 25px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			> .backBar {
+				border-radius: 10px;
+				border: 1px solid $text-color;
+				height: 30px;
+				width: 75%;
+				display: flex;
+				justify-content: space-between;
+				font-weight: bold;
+
+				> .frontBar {
+					border-radius: inherit;
+					background-color: $primary-color;
+					color: #fff;
+					height: 99.9%;
+					width: 60%;
+					padding: 5px 10px;
+				}
+
+				> .nextLevel {
+					padding: 5px 10px;
+				}
+			}
+
+			> .ProgressText {
+				margin-top: 8px;
+				font-size: 14px;
+			}
+		}
+
+		> .Rewards {
+			margin-top: 25px;
+			box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.38);
+
+			h3 {
+				font-weight: 400;
+				margin: 10px 20px 5px 20px;
+				@include text-lg;
+			}
+
+			.RewardContainer {
+				padding: 0;
+
+				> .Card {
+					box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.38);
+					border-radius: 5px;
+					display: inline-block;
+					margin: 10px;
+					width: calc(50% - 20px);
+					padding: 10px 5px 10px 10px;
+
+					> .title {
+						@include text-xl;
+					}
+
+					> .brand {
+						margin-top: 5px;
+					}
+
+					> .Conditional {
+						display: flex;
+						justify-content: space-between;
+						margin: 40px 0 0 0;
+
+						p {
+							margin: auto 0 5px 0;
+							font-size: 12px;
+						}
+
+						img {
+							width: 64px;
+							border-radius: 5px;
+						}
+					}
+				}
+			}
+		}
+
+		> .UpdateReward {
+			@include btn-primary;
+			align-self: center;
+			margin: 20px auto;
+			color: #fff;
+		}
+	}
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.RewardPage::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.RewardPage {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
