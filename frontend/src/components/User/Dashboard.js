@@ -46,7 +46,7 @@ const Dashboard = ({ user, videos }) => {
 					{/* <h2>My Personal Info</h2> */}
 					{/* <p>Email : {user.email}</p> */}
 					<img src={user.picture} alt="my-img" />
-					<p>{user.channelName}</p>
+					<p>@{user.channelName}</p>
 					{/* <p>Age : {user.age}</p> */}
 
 					{/* <p>Username : {user.displayName}</p> */}
@@ -72,12 +72,12 @@ const Dashboard = ({ user, videos }) => {
 							onClick={renderProps.onClick}
 							disabled={renderProps.disabled}
 						>
-							<img src={Google} alt="Google" />
 							Logout
 						</button>
 					)}
 					onLogoutSuccess={logout}
 				></GoogleLogout>
+
 				<div className="footer">
 					<div className="gridhead">
 						<div className="fatrello">

@@ -32,7 +32,7 @@ $text-box: #ffeef0;
 	border-radius: 0.25rem;
 	background-color: $primary-color;
 	// max-width: 80px;
-	width: 30%;
+	min-width: 30%;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 8px 0 rgba(0, 0, 0, 0.2);
 
 	border: none;

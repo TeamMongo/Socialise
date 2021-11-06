@@ -29,14 +29,21 @@
 
 			> img {
 				border-radius: 50%;
-				margin-top: 40px;
-				// width: 100px;
+				margin-top: 50px;
+				width: 120px;
+				--tw-shadow: 0 0 #0000;
+				box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+					var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+					0 2px 4px -1px rgba(0, 0, 0, 0.06);
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+					0 0px 8px 0 rgba(0, 0, 0, 0.1);
 			}
 
 			> p {
-				font-weight: bold;
+				// font-weight: bold;
 				margin-top: 8px;
-				@include text-xl;
+				@include text-2xl;
 			}
 
 			> h3 {
@@ -147,4 +154,10 @@
 .RewardPage {
 	-ms-overflow-style: none; /* IE and Edge */
 	scrollbar-width: none; /* Firefox */
+}
+
+@media (max-width: 480px) {
+	.RewardPage {
+		padding: 0px;
+	}
 }
