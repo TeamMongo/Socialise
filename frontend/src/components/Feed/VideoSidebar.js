@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { heartVideos, shopVideos } from '../../API/utils';
+import { FaHeart, FaRegHeart, FaShoppingBag } from 'react-icons/fa';
+import { IconContext } from 'react-icons';
 
 function VideoSidebar({ hearts, videoID, userID, productLink, ishearted }) {
 	const [hearted, setHearted] = useState(ishearted);
-	const [totalheates, setTotalheates] = useState(hearts);
+	const [totalhearts, setTotalhearts] = useState(hearts);
 
 	const pressLike = async () => {
 		const res = await heartVideos({ creatoruserID: userID, videoID });
 		setHearted((old) => res.hearted);
 		if (res.hearted) {
-			setTotalheates((old) => old + 1);
+			setTotalhearts((old) => old + 1);
 		} else {
-			setTotalheates((old) => old - 1);
+			setTotalhearts((old) => old - 1);
 		}
 	};
 	const pressShop = async () => {
@@ -20,16 +22,25 @@ function VideoSidebar({ hearts, videoID, userID, productLink, ishearted }) {
 	};
 	return (
 		<div className="videoSidebar">
-			<div className="videoSidebar__button">
-				<p>{totalheates}</p>
+			<div className="videoSidebarButton">
+				{hearted ? (
+					<div onClick={pressLike}>
+						<IconContext.Provider value={{ className: 'RedHeart' }}>
+							<FaHeart />
+						</IconContext.Provider>
+					</div>
+				) : (
+					<div onClick={pressLike}>
+						<FaRegHeart />
+					</div>
+				)}
+				<p>{totalhearts}</p>
 			</div>
-			{hearted ? (
-				<div onClick={pressLike}>unlike</div>
-			) : (
-				<div onClick={pressLike}>Like</div>
-			)}
-			<div className="videoSidebar__button">
-				<p onClick={pressShop}>Shop</p>
+			<div className="videoSidebarButton">
+				<div onClick={pressShop}>
+					<FaShoppingBag />
+				</div>
+				<p>Shop</p>
 			</div>
 		</div>
 	);

@@ -23,7 +23,7 @@
 		overflow: hidden;
 
 		.videomainframe {
-			height: 100vh;
+			height: calc(100vh - 80px);
 			display: flex;
 			flex-direction: column;
 			margin-top: auto;
@@ -34,7 +34,7 @@
 
 			.iframe-container {
 				// overflow: hidden;
-				height: 80%;
+				height: 100%;
 				padding-top: 56.25%; /* 16:9 */
 				position: relative;
 				iframe {
@@ -52,17 +52,31 @@
 			.videoSidebar {
 				margin-top: -4rem;
 				display: flex;
-				justify-content: space-evenly;
+				justify-content: space-between;
 				z-index: 10;
-				background-color: white;
+				background-color: transparent;
 				cursor: pointer;
 			}
-			.heartbutton {
+			.videoSidebarButton {
 				max-width: 5rem;
-				margin-top: -4rem;
-				margin-left: 3rem;
+				margin-top: -3rem;
+				margin-left: 4rem;
+				margin-right: 4rem;
 				z-index: 10;
 				cursor: pointer;
+				color: #fff;
+				font-size: 30px;
+				text-align: center;
+				text-shadow: 0px 2px #000;
+
+				p {
+					font-size: 14px;
+					color: #fff;
+				}
+
+				.RedHeart {
+					color: red;
+				}
 			}
 		}
 	}
