@@ -17,6 +17,7 @@
 		display: flex;
 		justify-content: space-evenly;
 		align-items: center;
+		border-radius: 0 0 4px 4px;
 
 		> .LogoutContainer {
 			display: none;
@@ -48,6 +49,7 @@
 
 		.currentNav {
 			color: #222;
+			transition: 0.5s;
 		}
 	}
 }

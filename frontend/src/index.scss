@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
-$primary-color: #fd3e58;
-$primary-back: #fd3e578e;
+$primary-color: #ff3f6c;
+$primary-back: #fdeeeb;
 $Roboto: 'Roboto', sans-serif;
 $text-color: #707070;
 $text-box: #ffeef0;
@@ -30,9 +30,10 @@ $text-box: #ffeef0;
 @mixin btn-primary {
 	padding: 0.5rem 1rem;
 	border-radius: 0.25rem;
-	background-color: rgb(73, 170, 73);
+	background-color: $primary-color;
 	// max-width: 80px;
 	width: 30%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 0px 8px 0 rgba(0, 0, 0, 0.2);
 
 	border: none;
 	line-height: 1.75rem;
@@ -68,6 +69,7 @@ body {
 	color: $text-color;
 	margin: 0;
 	padding: 20px 0;
+
 	> .container {
 		max-width: 480px;
 		width: 100%;
@@ -102,6 +104,15 @@ body {
 				width: 100%;
 				padding: 0.75rem;
 				@include text-lg;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05),
+					0 0px 8px 0 rgba(0, 0, 0, 0.1);
+
+				&:focus {
+					box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+						0 0px 8px 0 rgba(0, 0, 0, 0.2);
+					outline: none;
+					transition: 0.5s;
+				}
 			}
 			> select {
 				border: 1px solid;
@@ -124,12 +135,19 @@ body {
 			align-items: center;
 			margin: auto;
 		}
+
 		.submitbtn {
 			align-self: center;
 			@include btn-primary;
-			@include text-3xl;
+			@include text-xl;
 			background-color: $primary-color;
 			color: #fff;
 		}
+	}
+}
+
+@media (max-width: 480px) {
+	.formpage {
+		padding: 0px;
 	}
 }
