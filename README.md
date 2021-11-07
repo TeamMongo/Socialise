@@ -20,8 +20,8 @@ Project created during Myntra's HackerRamp: Campus Edition 2021 by Team Mongo un
 
 ### Links : 
 - Project Link : https://socialise10x.netlify.app/
-- Videos Link : Add Link Here
-- Presentation Link : Add Link Here
+- Videos Link : https://drive.google.com/drive/folders/1FDQjxLq_bVxKOjlWCQD3tQJkRU0P0pGh?usp=sharing
+- Presentation Link : https://docs.google.com/presentation/d/1fyWr4UOSlYs7F-4KwSQ-lWBx5-l-ejsDWNHui-fYqdk/edit?usp=sharing
 
 ### Technologies Used :
 - ### Frontend
