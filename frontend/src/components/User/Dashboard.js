@@ -56,10 +56,10 @@ const Dashboard = ({ user, videos }) => {
 							<div>{user.totalHeartsReceived}</div>
 							<span>Hearts</span>
 						</p>
-						<p>
+						{/* <p>
 							<div>{user.shopIconClicks}</div>
 							<span>Clicks</span>
-						</p>
+						</p> */}
 					</div>
 				</div>
 
@@ -80,12 +80,14 @@ const Dashboard = ({ user, videos }) => {
 
 				<div className="footer">
 					<div className="gridhead">
-						<div className="fatrello">
+						{/* <div className="fatrello">
 							<FaTrello />
 						</div>
 						<div className="faheart">
 							<FaHeart />
-						</div>
+						</div> */}
+
+						<h3>My Videos</h3>
 					</div>
 					<div className="videogrid">
 						{/* <h2>My Uploaded Video</h2> */}

@@ -64,7 +64,7 @@
 						@include text-lg;
 						font-weight: normal;
 					}
-					padding-bottom: 2rem;
+					padding-bottom: 20px;
 				}
 			}
 		}
@@ -83,9 +83,6 @@
 			.gridhead {
 				display: flex;
 				// justify-content: space-evenly;
-				padding: 0.5rem 1rem;
-
-				@include text-xl;
 				.fatrello,
 				.faheart {
 					width: 50%;
@@ -94,6 +91,12 @@
 					svg {
 						height: 2rem;
 					}
+				}
+
+				h3 {
+					font-weight: 400;
+					margin: 10px 20px;
+					@include text-lg;
 				}
 			}
 			.videogrid {
