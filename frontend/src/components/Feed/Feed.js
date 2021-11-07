@@ -30,6 +30,8 @@ const Feed = () => {
 			setVideos((v) => [...temp]);
 		});
 	};
+
+	// eslint-disable-next-line no-unused-vars
 	const handelscroll = (e) => {
 		let maxscreen = e.target.scrollTopMax;
 		let windowsize = maxscreen / videos.length;
