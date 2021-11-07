@@ -37,7 +37,7 @@ const Reward = () => {
 		const data = await postProgressPower();
 		Auth.setUser(data.user);
 		// console.log(Auth.user.points);
-		updateLevel();
+		// updateLevel();
 		setLoading(false);
 	};
 
@@ -50,9 +50,9 @@ const Reward = () => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	// useEffect(() => {
-	// 	updateLevel();
-	// }, Auth.user);
+	useEffect(() => {
+		updateLevel();
+	}, [Auth.user]);
 
 	return (
 		<div>

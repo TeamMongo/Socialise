@@ -137,6 +137,7 @@
 		}
 
 		> .UpdateReward {
+			display: none;
 			@include btn-primary;
 			align-self: center;
 			margin: 20px auto;
