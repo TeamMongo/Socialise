@@ -164,16 +164,24 @@ body {
 				}
 			}
 			> select {
-				border: 1px solid;
+				border: none;
+				background-color: $text-box;
 				min-width: 40px;
-				width: 40%;
-				padding: 0.5rem;
-				// @include text-lg;
-				font-size: 1rem;
-				line-height: 1rem;
+				width: 100%;
+				padding: 0.75rem;
+				@include text-lg;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05),
+					0 0px 8px 0 rgba(0, 0, 0, 0.1);
+
+				&:focus {
+					box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+						0 0px 8px 0 rgba(0, 0, 0, 0.2);
+					outline: none;
+					transition: 0.5s;
+				}
 			}
 			option {
-				border-radius: 0px;
+				border-radius: 0;
 			}
 		}
 		.termcondn {
