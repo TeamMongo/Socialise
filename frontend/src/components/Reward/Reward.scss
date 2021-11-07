@@ -73,12 +73,12 @@
 					background-color: $primary-color;
 					color: #fff;
 					height: 99.9%;
-					width: 60%;
-					padding: 5px 10px;
+					min-width: 5%;
+					padding: 5px 10px 5px 6px;
 				}
 
 				> .nextLevel {
-					padding: 5px 10px;
+					padding: 5px 6px 5px 4px;
 				}
 			}
 
@@ -94,19 +94,20 @@
 
 			h3 {
 				font-weight: 400;
-				margin: 10px 20px 5px 20px;
+				margin: 10px 20px 0px 20px;
 				@include text-lg;
 			}
 
 			.RewardContainer {
 				padding: 0;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
 
 				> .Card {
 					box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.38);
 					border-radius: 5px;
-					display: inline-block;
+					width: calc(100% - 20px);
 					margin: 10px;
-					width: calc(50% - 20px);
 					padding: 10px 5px 10px 10px;
 
 					> .title {

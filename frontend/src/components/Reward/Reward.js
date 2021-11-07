@@ -15,7 +15,7 @@ const Reward = () => {
 
 	const updateLevel = () => {
 		let i = 0;
-		while (tracks[i].pointsRequired < Auth.user.points) {
+		while (tracks[i].pointsRequired <= Auth.user.points) {
 			i++;
 		}
 		// console.log(i);
