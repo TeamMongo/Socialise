@@ -57,7 +57,14 @@ const Reward = () => {
 	return (
 		<div>
 			{loading ? (
-				<h1>Loading...</h1>
+				<div className="load-container">
+					<div className="load">
+						<hr />
+						<hr />
+						<hr />
+						<hr />
+					</div>
+				</div>
 			) : (
 				<div className="RewardPage">
 					<div className="container">

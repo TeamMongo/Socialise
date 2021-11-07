@@ -1,9 +1,8 @@
 import React, { useContext } from 'react';
 import { GoogleLogout } from 'react-google-login';
 import { AuthContext } from '../../App.js';
-import { FaHeart, FaTrello } from 'react-icons/fa';
+// import { FaHeart, FaTrello } from 'react-icons/fa';
 import './Dashboard.scss';
-import Google from '../../assets/google-logo.png';
 /**
  * Show My uploaded videos
  * Show My personal Objects

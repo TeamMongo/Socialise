@@ -36,6 +36,8 @@ export default function Video({
 				orderID={orderID}
 				productLink={productLink}
 				ishearted={ishearted}
+				channelName={channelName}
+				title={title}
 			/>
 		</div>
 	);

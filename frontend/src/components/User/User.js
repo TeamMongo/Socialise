@@ -29,7 +29,14 @@ const UserProfile = (props) => {
 	return (
 		<>
 			{loading ? (
-				<h1>Loading...</h1>
+				<div className="load-container">
+					<div className="load">
+						<hr />
+						<hr />
+						<hr />
+						<hr />
+					</div>
+				</div>
 			) : Auth.user.newuser ? (
 				<NewUserForm />
 			) : (
