@@ -1,5 +1,7 @@
 # Socialise
 
+Project created during Myntra's HackerRamp: Campus Edition 2021 by Team Mongo under the theme Socialise.
+
 ### Team Information :
 - Team Name : Mongo
 - Theme : Socialise
@@ -10,7 +12,7 @@
     -  Shridhar Thakur (shridhar-t
 )
 
-### Description :
+### Project Description :
 - Micro-Influencer system and reward incentive.
 - Allow every consumers to upload short videos about their purchases.
 - To give incentives for such uploads, we created a reward ladder.
