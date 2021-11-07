@@ -62,9 +62,7 @@ const Homepage = (props) => {
 						cookiePolicy={'single_host_origin'}
 					/>
 				</div>
-				<div className="About">
-					<a href="#">Know More</a>
-				</div>
+				<div className="About">{/* <a href="#">Know More</a> */}</div>
 			</div>
 		</div>
 	);

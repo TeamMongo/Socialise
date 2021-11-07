@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { patchUser } from '../../API/utils.js';
 
 const NewUserForm = () => {
-	const [personalObj, setPersonalObj] = useState({ phone: '+91 789654123' });
 	const postPersonalInfo = async (personalObj) => {
 		const data = await patchUser(personalObj);
 		if (data) window.location.reload();
@@ -13,9 +12,6 @@ const NewUserForm = () => {
 		age: 14,
 		gender: 'Male',
 	});
-	const handelClick = () => {
-		postPersonalInfo(personalObj);
-	};
 	const handelSubmit = (e) => {
 		e.preventDefault();
 		postPersonalInfo(formdata);

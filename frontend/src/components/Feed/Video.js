@@ -1,5 +1,4 @@
 import React from 'react';
-import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
 
 export default function Video({
@@ -27,8 +26,6 @@ export default function Video({
 					allowFullScreen
 				/>
 			</div>
-
-			{/* <VideoFooter channel={channelName} title={title} /> */}
 			<VideoSidebar
 				hearts={hearts}
 				videoID={videoID}

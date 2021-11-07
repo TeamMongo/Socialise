@@ -21,7 +21,7 @@ const Reward = () => {
 		// console.log(i);
 		setCurrLevel(i);
 		let percent;
-		if (i == 0) {
+		if (i === 0) {
 			percent = Auth.user.points / tracks[i].pointsRequired;
 		} else {
 			percent =
@@ -52,6 +52,7 @@ const Reward = () => {
 
 	useEffect(() => {
 		updateLevel();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [Auth.user]);
 
 	return (
