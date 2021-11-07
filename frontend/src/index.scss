@@ -131,6 +131,7 @@ body {
 		flex-direction: column;
 		display: flex;
 		overflow: scroll;
+		padding-bottom: 6rem;
 
 		> span {
 			color: $primary-color;

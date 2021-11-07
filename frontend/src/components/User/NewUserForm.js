@@ -25,8 +25,6 @@ const NewUserForm = () => {
 	};
 	return (
 		<div>
-			<h1>New User Form</h1>
-			<button onClick={handelClick}>Become Old User</button>
 			<div className="formpage">
 				<form onSubmit={handelSubmit} className="container">
 					<span>Few Extra Details..</span>

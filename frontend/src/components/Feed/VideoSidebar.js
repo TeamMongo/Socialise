@@ -26,7 +26,7 @@ function VideoSidebar({
 	};
 	const pressShop = async () => {
 		await shopVideos({ creatoruserID: userID, videoID });
-		// window.location.replace(productLink);
+		window.open(productLink, '_blank');
 	};
 	return (
 		<div className="videoSidebar">
